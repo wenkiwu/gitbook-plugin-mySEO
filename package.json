@@ -1,0 +1,27 @@
+{
+    "name":"gitbook-plugin-mySEO",
+    "version":"1.0.0",
+    "description":"This is a GitBook plugin for generate keywords and description for SEO",
+    "engines":{
+        "gitbook":">1.x.x"
+    },
+    "gitbook":{
+        "properties":{
+			"title-prefix":{
+				"type":"string",
+                "default":"",
+                "description":"It defines your title prefix"
+			},
+			"description":{
+				"type":"string",
+                "default":"",
+                "description":"It defines your description"
+			},
+            "keywords":{
+                "type":"string",
+                "default":"",
+                "description":"It defines your keywords"
+            }
+        }
+    }
+}
