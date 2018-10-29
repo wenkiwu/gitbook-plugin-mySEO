@@ -3,8 +3,8 @@ const fs = require('fs');
 
 function processSEO(page) {
 	var seo = this.config.get('pluginsConfig')['seo']
-	if(seo.title-prefix){
-		var title = seo.title-prefix + page.title;
+	if(seo.titlePrefix){
+		var title = seo.titlePrefix + page.title;
 		page.content = page.content + '\n<div id="title---">' + title + '</div>';
 	}
 	if(seo.keywords){

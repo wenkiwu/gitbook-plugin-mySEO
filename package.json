@@ -7,7 +7,7 @@
     },
     "gitbook":{
         "properties":{
-			"title-prefix":{
+			"titlePrefix":{
 				"type":"string",
                 "default":"",
                 "description":"It defines your title prefix"
