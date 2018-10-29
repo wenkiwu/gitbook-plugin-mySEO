@@ -19,3 +19,10 @@
     }
 }
 ```
+
+
+如果 build 时报错
+```
+PluginError: Error with plugin "mySEO": Cannot find module 'html-entities'
+```
+直接在项目目录使用`npm install html-entities`安装模块即可
