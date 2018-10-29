@@ -2,7 +2,7 @@ const htmlent = require('html-entities');
 const fs = require('fs');
 
 function processSEO(page) {
-	var seo = this.config.get('pluginsConfig')['seo']
+	var seo = this.config.get('pluginsConfig')['mySEO']
 	if(seo.titlePrefix){
 		var title = seo.titlePrefix + page.title;
 		page.content = page.content + '\n<div id="title---">' + title + '</div>';
