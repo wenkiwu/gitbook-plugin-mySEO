@@ -1,27 +1,49 @@
 {
-    "name":"gitbook-plugin-mySEO",
-    "version":"1.0.1",
-    "description":"This is a GitBook plugin for generate keywords and description for SEO",
-    "engines":{
+  "name": "gitbook-plugin-myseo",
+  "version": "1.1.0",
+  "description": "This is a GitBook plugin for generate keywords and description for SEO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+	"html-entities":""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WuWenhui/gitbook-plugin-mySEO.git"
+  },
+  "keywords": [
+    "seo",
+    "keywords"
+  ],
+  "author": "wenki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WuWenhui/gitbook-plugin-mySEO/issues"
+  },
+  "homepage": "https://github.com/WuWenhui/gitbook-plugin-mySEO#readme",
+  
+  "engines":{
         "gitbook":">1.x.x"
     },
-    "gitbook":{
-        "properties":{
+	"gitbook":{
+		"properties":{
 			"titlePrefix":{
 				"type":"string",
-                "default":"",
-                "description":"It defines your title prefix"
+				"default":"",
+				"description":"It defines your title prefix"
 			},
 			"description":{
 				"type":"string",
-                "default":"",
-                "description":"It defines your description"
+				"default":"",
+				"description":"It defines your description"
 			},
-            "keywords":{
-                "type":"string",
-                "default":"",
-                "description":"It defines your keywords"
-            }
-        }
-    }
+			"keywords":{
+				"type":"string",
+				"default":"",
+				"description":"It defines your keywords"
+			}
+		}
+	}
 }
