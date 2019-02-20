@@ -7,12 +7,19 @@ function processSEO(page) {
 		var title = seo.titlePrefix + page.title;
 		page.content = page.content + '\n<div id="title---">' + title + '</div>';
 	}
-	if(seo.keywords){
+	
+	var ruleKeywords = /<div id="meta-keywords---">([^>]+)?<\/div>/im;
+	var matchKeywords = ruleKeywords.exec(page.content);
+	if(!matchKeywords && seo.keywords){
 		page.content = page.content + '\n<div id="meta-keywords---">' + seo.keywords + '</div>';
 	}
-	if(seo.description){
+
+	var ruleDesc = /<div id="meta-description---">([^>]+)?<\/div>/im;
+	var matchDesc = ruleDesc.exec(page.content);
+	if(!matchDesc && seo.description){
 		page.content = page.content + '\n<div id="meta-description---">' + seo.description + '</div>';
 	}
+	
 	return page;
 }
 
