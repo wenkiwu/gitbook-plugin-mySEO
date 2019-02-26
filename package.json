@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-myseo",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "This is a GitBook plugin for generate keywords and description for SEO",
   "main": "index.js",
   "scripts": {

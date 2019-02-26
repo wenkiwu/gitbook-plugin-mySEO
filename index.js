@@ -67,6 +67,18 @@ function makeSEO() {
 						data = data.replace(match5[0], '<title>' + htmlent.Html5Entities.decode(match6[1]) + '</title>')
 					}
 				}
+				// nofollow
+				var rule7 = /<a\b[^>]+\btarget="([^"]*)"[^>]*>[\s\S]*?<\/a>/img;
+				var match7 = rule7.exec(data);
+				while(match7){
+					if(match7[1] && match7[1].indexOf("blank")>=0){
+						var nofollow = match7[0].replace(match7[1], "_blank\" rel=\"nofollow");
+						console.log(nofollow);
+						data = data.replace(match7[0], nofollow);
+					}
+					match7 = rule7.exec(data);
+				}
+				
 				fs.writeFileSync(fpath, data, 'utf-8');
 			} else if (fpath != "." &&
 				fpath != ".." &&
