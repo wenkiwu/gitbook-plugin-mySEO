@@ -3,8 +3,8 @@ const fs = require('fs');
 
 function processSEO(page) {
 	var seo = this.config.get('pluginsConfig')['myseo']
-	if(seo.titlePrefix){
-		var title = seo.titlePrefix + page.title;
+	if(seo.titlePrefix || seo.titleSuffix){
+		var title = seo.titlePrefix + page.title + seo.titleSuffix;
 		page.content = page.content + '\n<div id="title---">' + title + '</div>';
 	}
 	
@@ -73,7 +73,6 @@ function makeSEO() {
 				while(match7){
 					if(match7[1] && match7[1].indexOf("blank")>=0){
 						var nofollow = match7[0].replace(match7[1], "_blank\" rel=\"nofollow");
-						console.log(nofollow);
 						data = data.replace(match7[0], nofollow);
 					}
 					match7 = rule7.exec(data);
