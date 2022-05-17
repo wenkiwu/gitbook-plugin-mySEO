@@ -41,13 +41,13 @@ function makeSEO() {
 				if(match1){
 					var match2 = rule2.exec(data);
 					if(match2){
-						var descriptionHTML = '<meta name="description" content="' + htmlent.Html5Entities.decode(match2[1]) + '">';
+						var descriptionHTML = '<meta name="description" content="' + htmlent.decode(match2[1]) + '">';
 						data = data.replace(match2[0], '');
 						data = data.replace(match1[0], descriptionHTML);
 					}
 					var match3 = rule3.exec(data);
 					if (match3) {
-						var keywordsHTML = '<meta name="keywords" content="' + htmlent.Html5Entities.decode(match3[1]) + '">'
+						var keywordsHTML = '<meta name="keywords" content="' + htmlent.decode(match3[1]) + '">'
 						data = data.replace(match3[0], '');
 						if(descriptionHTML){
 							data = data.replace(descriptionHTML, descriptionHTML + keywordsHTML);
@@ -64,7 +64,7 @@ function makeSEO() {
 					var match6 = rule6.exec(data);
 					if(match6){
 						data = data.replace(match6[0], '');
-						data = data.replace(match5[0], '<title>' + htmlent.Html5Entities.decode(match6[1]) + '</title>')
+						data = data.replace(match5[0], '<title>' + htmlent.decode(match6[1]) + '</title>')
 					}
 				}
 				// nofollow
